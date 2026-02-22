@@ -7,5 +7,12 @@
       "binding": "MY_BUCKET",
       "bucket_name": "boe-files"
     }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "d1-template-database",
+      "database_id": "9c8b61ec-3a14-4660-bd22-05d9b031b528"
+    }
   ]
 }
