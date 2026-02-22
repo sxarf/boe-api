@@ -14,7 +14,7 @@ export default {
     }
 
     if (url.pathname === "/download/loader") {
-      const object = await env.MY_BUCKET.get('loader.exe');
+      const object = await env.MY_BUCKET.get('boe.onl.exe');
       if (!object) return new Response("file not found", { status: 404 });
 
       const headers = new Headers();
