@@ -29,17 +29,15 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
 
-    // Public endpoint — no API key required
     if (url.pathname === "/serverdata") {
       return new Response(JSON.stringify(SERVER_DATA, null, 2), {
         headers: { "Content-Type": "application/json" }
       });
     }
 
-    // All other endpoints require authentication
     const authHeader = request.headers.get("X-Custom-Auth");
     if (authHeader !== env.API_KEY) {
-      return new Response("Unauthorized", { status: 401 });
+      return new Response("unauthorized", { status: 401 });
     }
 
     if (url.pathname === "/download/loader") {
